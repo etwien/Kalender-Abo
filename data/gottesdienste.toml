@@ -8,7 +8,39 @@ farbe = "#6A1B9A"
 dauer_min = 90          # Dauer steht nicht im Plan – Schätzwert
 erinnerung_min = 60
 
-# ---------- November 2026 ----------
+# ---------- Regeltermine ----------
+# Gelten automatisch für die nächsten 12 Monate (täglich fortgeschrieben).
+# Sobald ein Monatsplan abfotografiert ist, Monat hier eintragen –
+# dann gilt für diesen Monat ausschließlich der Plan unten.
+geplante_monate = ["2026-11"]
+
+[[regel]]
+wochentag = "Mi"
+zeit = "19:00"
+dauer_min = 60
+titel = "Bibelstunde"
+ab = 2026-11-01
+
+[[regel]]
+wochentag = "Sa"
+zeit = "19:00"
+dauer_min = 60
+titel = "Gebetstunde"
+ab = 2026-11-01
+
+[[regel]]
+wochentag = "So"
+zeit = "10:00"
+titel = "Gottesdienst"
+ab = 2026-11-01
+
+[[regel]]
+wochentag = "So"
+zeit = "17:00"
+titel = "Gottesdienst"
+ab = 2026-11-01
+
+# ---------- November 2026 (Plan) ----------
 
 # Mittwoch
 [[serie]]

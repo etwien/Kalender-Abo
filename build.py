@@ -84,7 +84,11 @@ def build_event(cal: dict, ev: dict, stamp: str) -> list[str]:
                   f"DTEND;VALUE=DATE:{d + timedelta(days=1):%Y%m%d}",
                   "TRANSP:TRANSPARENT"]
         key = d.isoformat()
-    lines += [f"UID:{uid(cal['name'], key, ev.get('ort', ''), title)}",
+    # Termine mit Uhrzeit: UID nur aus Datum+Zeit, damit ein Regeltermin
+    # („Gottesdienst“) beim Nachtragen des Plans („Gottesdienst – Chor“) aktualisiert wird.
+    # Ganztägige (Müll) brauchen den Titel, da mehrere am selben Tag liegen.
+    uid_parts = (cal["name"], key) if "zeit" in ev else (cal["name"], key, ev.get("ort", ""), title)
+    lines += [f"UID:{uid(*uid_parts)}",
               f"DTSTAMP:{stamp}",
               f"SUMMARY:{esc(title)}"]
     if ev.get("ort"):
@@ -98,6 +102,31 @@ def build_event(cal: dict, ev: dict, stamp: str) -> list[str]:
                   f"TRIGGER:-PT{int(erinnerung)}M", "END:VALARM"]
     lines.append("END:VEVENT")
     return lines
+
+
+WOCHENTAGE = {"Mo": 0, "Di": 1, "Mi": 2, "Do": 3, "Fr": 4, "Sa": 5, "So": 6}
+
+
+def expand_rules(cal: dict) -> list[dict]:
+    """Regeltermine ([[regel]]) erzeugen – von `ab` bis heute + `vorschau_tage`.
+
+    Monate in `geplante_monate` werden übersprungen: Dort gilt allein der
+    abfotografierte Plan, damit Ausfälle und Sonderformate korrekt sind.
+    """
+    geplant = set(cal.get("geplante_monate", []))
+    horizont = date.today() + timedelta(days=int(cal.get("vorschau_tage", 365)))
+    out = []
+    for regel in cal.get("regel", []):
+        wd = WOCHENTAGE[regel["wochentag"]]
+        d = regel["ab"]
+        d += timedelta(days=(wd - d.weekday()) % 7)
+        bis = min(regel.get("bis", horizont), horizont)
+        extra = {k: v for k, v in regel.items() if k not in ("wochentag", "ab", "bis")}
+        while d <= bis:
+            if f"{d:%Y-%m}" not in geplant:
+                out.append({**extra, "datum": d})
+            d += timedelta(days=7)
+    return out
 
 
 def fetch_external(url: str) -> list[str]:
@@ -126,6 +155,7 @@ def build_calendar(src: Path) -> tuple[str, int]:
     for serie in cal.get("serie", []):
         extra = {k: v for k, v in serie.items() if k != "daten"}
         events += [{**extra, "datum": d} for d in serie["daten"]]
+    events += expand_rules(cal)
     for ev in sorted(events, key=lambda e: (str(e["datum"]), str(e.get("zeit", "")))):
         body += build_event(cal, ev, stamp)
     count = len(events)
