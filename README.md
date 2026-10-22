@@ -4,8 +4,8 @@ Zwei abonnierbare Kalender fürs iPhone, gebaut aus `data/*.toml`:
 
 | Kalender | Datei | Abo-Link |
 |---|---|---|
-| Müllabfuhr | `data/muell.toml` | `webcal://<USER>.github.io/kalender-abo/muell.ics` |
-| Gottesdienste | `data/gottesdienste.toml` | `webcal://<USER>.github.io/kalender-abo/gottesdienste.ics` |
+| Müllabfuhr | `data/muell.toml` | `webcal://etwien.github.io/Kalender-Abo/muell.ics` |
+| Gottesdienste | `data/gottesdienste.toml` | `webcal://etwien.github.io/Kalender-Abo/gottesdienste.ics` |
 
 ## Ablauf
 1. Termine in `data/*.toml` eintragen und committen.
