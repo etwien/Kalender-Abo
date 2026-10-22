@@ -1,0 +1,34 @@
+name: Kalender bauen
+
+on:
+  push:
+    paths: ["data/**", "build.py", ".github/workflows/build.yml"]
+  schedule:
+    - cron: "17 3 * * *"   # täglich ~05:17 MESZ, holt externe Quellen neu
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python build.py
+      - name: Änderungen committen
+        run: |
+          git config user.name "kalender-bot"
+          git config user.email "kalender-bot@users.noreply.github.com"
+          git add docs/*.ics
+          # DTSTAMP ändert sich bei jedem Lauf – nur committen, wenn sich echte Inhalte geändert haben
+          if git diff --cached -U0 | grep -E '^[+-][A-Z]' | grep -vE '^[+-](DTSTAMP|\+\+|--)' | grep -q .; then
+            git commit -m "Kalender aktualisiert"
+            git push
+          else
+            git reset -q
+            echo "Keine inhaltlichen Änderungen."
+          fi

@@ -1,0 +1,47 @@
+# Müllabfuhr Brakel, Pahenwinkel 13
+# Quelle: Online-Abfallkalender Kreis Höxter (Screenshots vom 22.10.2026)
+titel = "Müllabfuhr"
+farbe = "#2E7D32"
+# Erinnerung am Vorabend um 19:00 (300 min vor 00:00 des Abfuhrtags)
+erinnerung_min = 300
+
+# Falls der Kreis Höxter einen iCal-Link anbietet, hier eintragen.
+# Dann werden die Termine bei jedem Lauf frisch abgerufen.
+# quelle_ics = "https://..."
+
+[[serie]]
+titel = "Restmüll (graue Tonne)"
+notiz = "Restabfallbehälter 240 l, 4-wöchentlich"
+daten = [
+  2026-01-28, 2026-02-25, 2026-03-25, 2026-04-22, 2026-05-20, 2026-06-17,
+  2026-07-15, 2026-08-12, 2026-09-09, 2026-10-07, 2026-11-04, 2026-12-02,
+  2026-12-30,
+]
+
+[[serie]]
+titel = "Gelbe Tonne (Wertstoffe)"
+notiz = "Wertstofftonne 240 l, 4-wöchentlich"
+daten = [
+  2026-01-28, 2026-02-25, 2026-03-25, 2026-04-22, 2026-05-20, 2026-06-17,
+  2026-07-15, 2026-08-12, 2026-09-09, 2026-10-07, 2026-11-04, 2026-12-02,
+  2026-12-30,
+]
+
+[[serie]]
+titel = "Biotonne"
+notiz = "Bioabfallbehälter 120 l, 2-wöchentlich"
+daten = [
+  2026-08-19, 2026-09-02, 2026-09-16, 2026-09-30, 2026-10-14, 2026-10-28,
+  2026-11-11, 2026-11-25, 2026-12-09,
+  2026-12-22,  # Dienstag – feiertagsbedingt verschoben
+]
+
+[[serie]]
+titel = "Papiertonne (blau)"
+notiz = "Papierbehälter 240 l, 4-wöchentlich"
+daten = [
+  2026-01-14, 2026-02-11, 2026-03-11,
+  2026-04-09,  # Donnerstag – feiertagsbedingt verschoben
+  2026-05-06, 2026-06-03, 2026-07-01, 2026-07-29, 2026-08-26, 2026-09-23,
+  2026-10-21, 2026-11-18, 2026-12-16,
+]

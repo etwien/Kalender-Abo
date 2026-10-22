@@ -1,0 +1,99 @@
+# Gemeindekalender
+# Aufnehmen: Mittwochabend, Samstag, Sonntag, alle Jungverheirateten-Veranstaltungen,
+#            Zusatzveranstaltungen vor Ort
+# Weglassen: Prediger-Veranstaltungen, Ausfahrten zu anderen Gemeinden
+# Quelle: Aushang „Unsere Gottesdienste im November 2026" (Änderungen vorbehalten)
+titel = "Gemeinde"
+farbe = "#6A1B9A"
+dauer_min = 90          # Dauer steht nicht im Plan – Schätzwert
+erinnerung_min = 60
+
+# ---------- November 2026 ----------
+
+# Mittwoch
+[[serie]]
+titel = "Bibelstunde"
+zeit = "19:00"
+dauer_min = 60
+daten = [2026-11-04, 2026-11-11, 2026-11-18, 2026-11-25]
+
+# Samstag
+[[termin]]
+datum = 2026-11-07
+zeit = "19:00"
+titel = "Gebetstunde – Blechbläser"
+
+[[termin]]
+datum = 2026-11-14
+zeit = "19:00"
+titel = "Gebetstunde – Holzbläser"
+
+[[termin]]
+datum = 2026-11-21
+zeit = "10:00"
+dauer_min = 180
+titel = "Missionskonferenz – Chor + Sinfonieorchester"
+
+[[termin]]
+datum = 2026-11-28
+zeit = "19:00"
+titel = "Gemeindestunde"
+
+# Sonntag
+[[termin]]
+datum = 2026-11-01
+zeit = "10:00"
+titel = "Gottesdienst – Chor"
+
+[[termin]]
+datum = 2026-11-01
+zeit = "17:00"
+titel = "Gottesdienst – Abendmahl"
+
+[[termin]]
+datum = 2026-11-08
+zeit = "10:00"
+titel = "Gottesdienst – Kinderchor"
+
+[[termin]]
+datum = 2026-11-08
+zeit = "17:00"
+titel = "Gottesdienst – Jungschar"
+
+[[termin]]
+datum = 2026-11-15
+zeit = "10:00"
+titel = "Gottesdienst – Chor"
+
+[[termin]]
+datum = 2026-11-15
+zeit = "17:00"
+dauer_min = 90
+titel = "Gottesdienst – Orchester aus Espelkamp"
+notiz = "Besuch aus Espelkamp, laut Plan 1,5 h"
+
+[[termin]]
+datum = 2026-11-22
+zeit = "10:00"
+titel = "Gottesdienst – Sinfonieorchester"
+
+[[termin]]
+datum = 2026-11-22
+zeit = "17:00"
+titel = "Gottesdienst – Jugend"
+
+[[termin]]
+datum = 2026-11-29
+zeit = "10:00"
+titel = "Gottesdienst – Chor"
+
+[[termin]]
+datum = 2026-11-29
+zeit = "17:00"
+titel = "Gottesdienst – Abendmahl"
+
+# Freitag – Jungverheiratete
+[[termin]]
+datum = 2026-11-20
+zeit = "19:30"
+titel = "Jugendstunde – Jungverheiratete"
