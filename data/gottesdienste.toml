@@ -2,7 +2,7 @@
 # Aufnehmen: Mittwochabend, Samstag, Sonntag, alle Jungverheirateten-Veranstaltungen,
 #            Zusatzveranstaltungen vor Ort
 # Weglassen: Prediger-Veranstaltungen, Ausfahrten zu anderen Gemeinden
-# Quelle: Aushang „Unsere Gottesdienste im November 2026" (Änderungen vorbehalten)
+# Quelle: Aushänge „Unsere Gottesdienste im November/Dezember 2026" (Änderungen vorbehalten)
 titel = "Gemeinde"
 farbe = "#6A1B9A"
 dauer_min = 90          # Dauer steht nicht im Plan – Schätzwert
@@ -12,7 +12,7 @@ erinnerung_min = 60
 # Gelten automatisch für die nächsten 12 Monate (täglich fortgeschrieben).
 # Sobald ein Monatsplan abfotografiert ist, Monat hier eintragen –
 # dann gilt für diesen Monat ausschließlich der Plan unten.
-geplante_monate = ["2026-11"]
+geplante_monate = ["2026-11", "2026-12"]
 
 [[regel]]
 wochentag = "Mi"
@@ -129,3 +129,92 @@ titel = "Gottesdienst – Abendmahl"
 datum = 2026-11-20
 zeit = "19:30"
 titel = "Jugendstunde – Jungverheiratete"
+
+# ---------- Dezember 2026 (Plan) ----------
+# Sa 19.12.: kein Gottesdienst (laut Plan) – daher kein Eintrag
+
+# Mittwoch
+[[serie]]
+titel = "Bibelstunde"
+zeit = "19:00"
+dauer_min = 60
+daten = [2026-12-02, 2026-12-09, 2026-12-16]
+
+[[termin]]
+datum = 2026-12-23
+zeit = "19:00"
+titel = "Gemeindestunde"
+
+# Samstag
+[[termin]]
+datum = 2026-12-05
+zeit = "19:00"
+titel = "Gebetstunde – Akkordeon u. Gitarren"
+
+[[termin]]
+datum = 2026-12-12
+zeit = "19:00"
+titel = "Gebetstunde"
+
+# Sonntag
+[[termin]]
+datum = 2026-12-06
+zeit = "10:00"
+titel = "Gottesdienst – Schwesternchor"
+
+[[termin]]
+datum = 2026-12-06
+zeit = "17:00"
+titel = "Gottesdienst – Ki.Gr."
+
+[[termin]]
+datum = 2026-12-13
+zeit = "10:00"
+titel = "Gottesdienst – Adventssingen"
+
+[[termin]]
+datum = 2026-12-13
+zeit = "15:00"
+titel = "Gottesdienst – Adventssingen"
+
+[[termin]]
+datum = 2026-12-20
+zeit = "10:00"
+titel = "Gottesdienst – Chor"
+
+[[termin]]
+datum = 2026-12-20
+zeit = "16:00"
+titel = "Kinderweihnacht"
+
+[[termin]]
+datum = 2026-12-27
+zeit = "10:00"
+titel = "Gottesdienst – Chor"
+
+[[termin]]
+datum = 2026-12-27
+zeit = "17:00"
+titel = "Gottesdienst – Abendmahl"
+
+# Weihnachten
+[[termin]]
+datum = 2026-12-24
+zeit = "16:00"
+titel = "Heiligabend – Jugendchor, Blechbläser"
+
+[[termin]]
+datum = 2026-12-25
+zeit = "10:00"
+titel = "1. Weihnachtstag – Männerchor"
+
+[[termin]]
+datum = 2026-12-26
+zeit = "10:00"
+titel = "2. Weihnachtstag – Jugend"
+
+# Jungverheiratete
+[[termin]]
+datum = 2026-12-31
+zeit = "16:00"
+titel = "Jahresabschluss – Jungverheiratete"
